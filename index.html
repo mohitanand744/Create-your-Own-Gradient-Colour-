@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+        list-style: none;
+      }
+
+      body {
+        height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(
+          to right top,
+          #051937,
+          #004d7a,
+          #008793,
+          #00bf72,
+          #a8eb12
+        );
+      }
+      nav {
+        width: 100%;
+        height: 50px;
+        background: transparent;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px 7px,
+          rgba(0, 0, 0, 0.233) 0px 18px 36px -13px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 3%;
+        align-items: center;
+
+        & .logo-container {
+          display: flex;
+          align-items: center;
+          color: #fff;
+          font-weight: bold;
+
+          & p {
+            font-size: 25px;
+            text-shadow: 2px 3px 15px #0000009c;
+            background: -webkit-linear-gradient(#aeff00, #00eaff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+      }
+      .main-container {
+        width: 100%;
+        height: calc(100vh - 50px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 0 5%;
+      }
+      .bgimage {
+        background-image: url("./pngbg.png");
+        background-size: cover;
+        background-position: bottom;
+        width: 50%;
+        height: 30%;
+        position: absolute;
+        right: 0px;
+        top: 50px;
+      }
+      .bgimage2 {
+        background-image: url("./pngbg.png");
+        background-size: cover;
+        background-position: bottom;
+        rotate: 180deg;
+        width: 50%;
+        height: 30%;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+      }
+      .portfolio {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+      section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.7rem;
+
+        & .btn-container {
+          display: flex;
+          gap: 1.4rem;
+          justify-content: center;
+
+          & .btn {
+            padding: 10px 30px;
+            font-size: 15px;
+            border-left: 3px solid #fff;
+            color: #fff;
+            border-right: 3px solid #fff;
+            background: transparent;
+            border-top: none;
+            border-bottom: none;
+            border-radius: 15px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+              rgba(0, 0, 0, 0.12) 0px -12px 30px,
+              rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+              rgba(0, 0, 0, 0.09) 0px -3px 5px;
+          }
+        }
+
+        & p {
+          color: #fff;
+        }
+
+        & .code-container {
+          width: 70%;
+          height: fit-content;
+          padding: 1.3rem;
+          border-radius: 10px;
+          font-weight: bold;
+          border-left: 3px solid #fff;
+          color: #fff;
+          border-right: 3px solid #fff;
+          background: transparent;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px 7px,
+            rgba(0, 0, 0, 0.233) 0px 18px 36px -13px;
+        }
+      }
+      .moving-arrow {
+        animation: movingarrow 0.7s linear infinite alternate;
+      }
+
+      @keyframes movingarrow {
+        0% {
+          translate: 20%;
+        }
+        100% {
+          translate: 90%;
+        }
+      }
+      @media screen and (max-width: 748px) {
+        nav .logo-container {
+          display: none;
+        }
+        body {
+          font-size: 15px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="logo-container">
+          <img
+            src="./modern-logo-design-template_591497-151.png"
+            width="60"
+            alt=""
+          />
+          <p>Generate Your Own Gradient Colour</p>
+        </div>
+        <div class="portfolio">
+          <img
+            width="34"
+            height="34"
+            class="moving-arrow"
+            src="https://img.icons8.com/nolan/64/right-squared--v1.png"
+            alt="right-squared--v1"
+          />
+          <p>
+            <a
+              style="
+                text-decoration: none;
+                color: #fff;
+                font-weight: bold;
+                font-size: 25px;
+                background: -webkit-linear-gradient(#0044ffe7, #ff0c0cd8);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+              "
+              href="https://mohit-anand-portfolio.netlify.app/"
+              >Portfolio</a
+            >
+          </p>
+        </div>
+      </nav>
+    </header>
+
+    <div class="main-container">
+      <div class="bgimage"></div>
+      <section>
+        <div class="btn-container">
+          <button id="btn1" class="btn"><b>Click To Change Color</b></button>
+          <button id="btn2" class="btn"><b>Click To Change Color</b></button>
+        </div>
+        <p><b>Hover To Copy The Css Code</b></p>
+        <div class="code-container">
+          <p>
+            background-image: linear-gradient(to right, rgb(92,145,229),
+            rgb(152,63,198))
+          </p>
+        </div>
+      </section>
+      <div class="bgimage2"></div>
+    </div>
+
+    <script>
+      let btn1 = document.getElementById("btn1");
+      let btn2 = document.getElementById("btn2");
+      let copyCode = document.querySelector(".code-container");
+
+      let getHexValue = () => {
+        let hexaValues = "0123456789abcdef";
+        let colorHexCode = "#";
+
+        for (let i = 0; i < 6; i++) {
+          colorHexCode += hexaValues[Math.floor(Math.random() * 16)];
+        }
+        return colorHexCode;
+      };
+      let rgb1 = "#004d7a";
+      let btn1HexCode = () => {
+        rgb1 = getHexValue();
+        document.body.style.backgroundImage = `linear-gradient( to right top, ${rgb1}, ${rgb2})`;
+        copyCode.innerText = `background-image: linear-gradient(to right, ${rgb1}, ${rgb2})`;
+      };
+      let rgb2 = "#a8eb07";
+      let btn2HexCode = () => {
+        rgb2 = getHexValue();
+        document.body.style.backgroundImage = `linear-gradient(to right top, ${rgb1}, ${rgb2})`;
+        copyCode.innerText = `background-image: linear-gradient(to right, ${rgb1}, ${rgb2})`;
+      };
+
+      btn1.addEventListener("click", btn1HexCode);
+      btn2.addEventListener("click", btn2HexCode);
+
+      copyCode.addEventListener("mouseover", () => {
+        navigator.clipboard.writeText(copyCode.innerText);
+        alert("CssCode Copied successfully...");
+      });
+    </script>
+  </body>
+</html>
